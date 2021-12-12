@@ -50,4 +50,3 @@ This is a real function (though slightly redacted) that I once put into producti
 My advice: never modify `globals` or `builtins`. If you find yourself doing that then probably something is fundamentally wrong with the design of your application. If you're a novice make sure to consult your application design with somebody who has more experience. Prefer explicit imports and as little import magic as possible.
 
 > 👀 Where import magic was usually useful for me was when I wanted to load entire Python scripts as _configuration_ files. Even though I would use `importlib` and `inspect` modules for that, I would never touch `globals` or `builtins`.
-
