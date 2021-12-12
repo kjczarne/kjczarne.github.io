@@ -12,11 +12,25 @@ outputs:
 
 
 params:
+  ShowShareButtons: true
+  ShowReadingTime: true
   homeInfoParams:
     Title: Klebstoff
     Content: >
       **Krzysztof J. Czarnecki**'s Blog
   ShowCodeCopyButtons: true
+
+  profileMode:
+    enabled: true
+    title: "Klebstoff" # optional default will be site title
+    subtitle: "**Krzysztof J. Czarnecki**"
+    imageUrl: "/me.jfif" # optional
+    imageTitle: "<title of image as alt>" # optional
+    imageWidth: 300 # custom size
+    imageHeight: 300 # custom size
+    buttons:
+      - name: Blog
+        url: "/posts"
 
   socialIcons: # optional
     - name: "github"
@@ -37,6 +51,13 @@ params:
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
 
+
+cover:
+  image: "/static/3c.png"
+  # can also paste direct link from external site
+  # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
+  alt: "logo"
+  relative: true # To use relative path for cover image, used in hugo Page-bundles
 
 menu:
   main:
