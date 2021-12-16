@@ -1,0 +1,44 @@
+<div class="profile">
+    {{- with .Site.Params.profileMode }}
+    <div class="profile_inner">
+        {{- if .imageUrl -}}
+        <img src="{{ .imageUrl }}" alt="{{ .imageTitle | default "profile image" }}"
+            height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
+        {{- end }}
+        <h1>{{ .title | default $.Site.Title | markdownify }}</h1>
+        <span>{{ .subtitle | markdownify }}</span>
+        {{- partial "social_icons.html" $.Site.Params.socialIcons -}}
+
+        {{- with .buttons }}
+        <div class="buttons">
+            {{- range . }}
+            <a class="button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name | title }}">
+                <span class="button-inner">{{ .name | title }}</span>
+            </a>
+            {{- end }}
+        </div>
+        {{- end }}
+
+        {{- with .newsletter}}
+        <div class="newsletter" style="margin-top: 5em;">
+            <form
+                style="padding:3px;text-align:center;"
+                action="{{ trim .url " " }}"
+                method="post"
+                target="popupwindow"
+                onsubmit="window.open('{{ trim .url " " }}', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+                    <p><label for="tlemail" style="margin: 0.5em 0.2em 0.5em 0.2em; font-size: smaller;">
+                        Subscribe to my newsletter if you like to know about new blog posts:
+                    </label></p>
+                    <p><input
+                        type="text" style="width:200px; background-color: lightgrey; background-blend-mode: darken; border-radius: 10px;"
+                        name="email" id="tlemail" /></p>
+                    <input type="hidden" value="1" name="embed"/>
+                    <input class="button" rel="noopener" type="submit" value="Subscribe" />
+                    <p><a style="font-size: x-small;" href="https://tinyletter.com" target="_blank">powered by TinyLetter</a></p>
+            </form>
+        </div>
+        {{- end }}
+    </div>
+    {{- end}}
+</div>

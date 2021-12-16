@@ -31,6 +31,9 @@ params:
     buttons:
       - name: Blog
         url: "/posts"
+    newsletter:
+      name: TinyLetter
+      url: https://tinyletter.com/kjczarne
 
   socialIcons: # optional
     - name: "github"

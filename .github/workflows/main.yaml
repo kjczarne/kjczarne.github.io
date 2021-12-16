@@ -30,3 +30,17 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+
+      # TODO: create an action that reads 
+      # - name: Send newsletter
+      #   uses: dawidd6/action-send-mail@v3
+      #   if: github.ref == 'refs/heads/master'
+      #   with:
+      #     server_address: smtp.gmail.com
+      #     server_port: 465
+      #     username: ${{ secrets.EMAIL_USERNAME }}
+      #     password: ${{ secrets.EMAIL_PASSWORD }}
+      #     subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+      #     body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+      #     from: Krzysztof J. Czarnecki
+      #     to: 'beamer-a877f213a5d72527d07ad41cad269b63f3aadadf@tinyletter.com'
