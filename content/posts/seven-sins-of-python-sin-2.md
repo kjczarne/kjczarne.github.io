@@ -33,7 +33,7 @@ While it might be ok for small data structures, the problem with all kinds of lo
 
 The test I've ran showed about 30% performance increase with a simple refactor from a `for` loop to a `list(map(f, x))` idiom.
 
-You can do your own timings on your own and modify the examples as you please in this [Python notebook](https://github.com/kjczarne/kjczarne.github.io/tree/master/notebooks/python-sin-2.ipynb).
+You can do your own timings on your own and modify the examples as you please in this [Python notebook](https://github.com/kjczarne/kjczarne.github.io/tree/master/content/notebooks/python-sin-2.ipynb).
 
 ### How to recognize a sinner?
 

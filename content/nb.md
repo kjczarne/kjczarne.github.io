@@ -6,4 +6,4 @@ draft: false
 
 Here are links to some of the Jupyter Notebooks mentioned in my blog posts:
 
-- [Python - timing builtins vs. loops](https://github.com/kjczarne/kjczarne.github.io/tree/master/notebooks/python-sin-2.ipynb)
+- [Python - timing builtins vs. loops](https://github.com/kjczarne/kjczarne.github.io/tree/master/content/notebooks/python-sin-2.ipynb)
