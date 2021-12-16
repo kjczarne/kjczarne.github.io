@@ -1,5 +1,5 @@
 ---
-title: "Seven Sins of Python Sin 2"
+title: "Seven Sins of Python - Sin 2"
 date: 2021-12-16T23:51:37+01:00
 tags:
   - seven-sins-of-python
