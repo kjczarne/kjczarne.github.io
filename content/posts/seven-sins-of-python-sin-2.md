@@ -1,9 +1,9 @@
 ---
 title: "Seven Sins of Python Sin 2"
 date: 2021-12-16T23:51:37+01:00
-tags: []
+tags:
+  - seven-sins-of-python
 showToc: true
-draft: true
 ---
 
 ## Sin number 2: too few optimized functions used
