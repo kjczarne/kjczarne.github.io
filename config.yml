@@ -3,6 +3,11 @@ languageCode: 'en-us'
 title: 'Klebstoff'
 theme: 'PaperMod'
 
+author:
+  name: Krzysztof J. Czarnecki
+copyright: >
+  Copyright 2021 Krzysztof J. Czarnecki. Fair use permitted with authorship
+  attribution. Commercial use disallowed without explicit permission.
 
 outputs:
   home:
