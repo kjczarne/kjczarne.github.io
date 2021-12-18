@@ -64,7 +64,7 @@ A slightly improved variant would actually check the types of arguments at runti
 
 ```python
 def add_two_ints(x, y):
-    if type(x) is not int and type(x) is not int:
+    if type(x) is not int and type(y) is not int:
         raise ValueError(f"This function accepts only integers as parameters! Called with {x} and {y}")
     return x + y
 ```
@@ -85,7 +85,7 @@ There is one extremely important feature that has been added in Python 3.5 and s
 
 ```python
 def add_two_ints(x: int, y: int) -> int:
-    if type(x) is not int and type(x) is not int:
+    if type(x) is not int and type(y) is not int:
         raise ValueError(f"This function accepts only integers as parameters! Called with {x} and {y}")
     return x + y
 ```
