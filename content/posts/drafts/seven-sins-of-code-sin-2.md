@@ -4,7 +4,7 @@ date: 2021-12-17T23:28:00+01:00
 showToc: true
 draft: true
 tags:
-  - seven-sins-of-python
+  - seven-sins-of-code
 ---
 
 ## Sin number 2: Neverending functions

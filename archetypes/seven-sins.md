@@ -4,7 +4,7 @@ date: {{ .Date }}
 showToc: true
 draft: true
 tags:
-  - seven-sins-of-python
+  - seven-sins-of-XXXXXXXXXXXXXXX
 ---
 
 ## Sin number X:
