@@ -4,6 +4,8 @@ date: 2021-12-17T22:26:21+01:00
 showToc: true
 tags:
   - seven-sins-of-python
+categories:
+  - software-development
 ---
 
 ## Sin number 3: Unconditional romance with ducktyping

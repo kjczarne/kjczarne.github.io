@@ -5,6 +5,8 @@ draft: false
 showToc: true
 tags:
   - seven-sins-of-python
+categories:
+  - software-development
 ---
 
 ## Seven Sins of Python - intro

@@ -4,6 +4,8 @@ date: 2021-12-16T23:51:37+01:00
 tags:
   - seven-sins-of-python
 showToc: true
+categories:
+  - software-development
 ---
 
 ## Sin number 2: too few optimized functions used

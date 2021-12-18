@@ -83,6 +83,10 @@ menu:
     name: tags
     url: /tags/
     weight: 3
+  - identifier: categories
+    name: categories
+    url: /categories/
+    weight: 4
   - identifier: posts
     name: posts
     url: /posts/

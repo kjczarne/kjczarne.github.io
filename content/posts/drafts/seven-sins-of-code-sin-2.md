@@ -5,6 +5,8 @@ showToc: true
 draft: true
 tags:
   - seven-sins-of-code
+categories:
+  - software-development
 ---
 
 ## Sin number 2: Neverending functions
