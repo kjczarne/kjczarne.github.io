@@ -8,7 +8,7 @@ tags:
   - seven-sins-of-python
 ---
 
-## Sin number 6: Packaging done right
+## Sin number 6: Packaging not done right
 
 Packaging Python projects properly can be truly a pain in the neck. However learning how to properly set up a package is extremely valuable because adherence to standards means more people can use your package efficiently.
 
