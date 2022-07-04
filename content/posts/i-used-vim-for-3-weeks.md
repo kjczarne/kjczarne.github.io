@@ -14,7 +14,7 @@ categories:
 
 I have recently had a few days off from work due to festivities in Germany and I used some of my spare time to finally investigate the Vim editor.
 
-For those who do not know Vim is a text editor, which was developed by Bram Moolenaar and released for the first time in 1991. So it's not that old yet. But if you consider the fact that this is an improved version of Billy Joy's `vi` editor which was originally developed in 1976 for the UNIX operating system, things start to get interesting.
+For those who do not know Vim is a text editor, which was developed by Bram Moolenaar and released for the first time in 1991. So it's not that old yet. But if you consider the fact that this is an improved version of Billy Joy's `vi` editor which was originally developed in 1976 for the UNIX operating system, things start to get interesting as you realize for how long it's been around and you've lived merrily without ever trying it.
 
 ## Vim for laymen
 
