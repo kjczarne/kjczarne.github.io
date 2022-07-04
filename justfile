@@ -10,9 +10,9 @@ build:
 build-min:
     hugo --minify
 
-# Run development server to preview
+# Run development server to preview (with drafts)
 dev:
-    hugo server
+    hugo server -D
 
 # For when I forget deep-cloning the theme submodule
 get-theme:
