@@ -25,7 +25,7 @@ params:
   ShowShareButtons: true
   ShowReadingTime: true
   homeInfoParams:
-    Title: Klebstoff
+    Title: Chris
     Content: >
       **Krzysztof J. Czarnecki**'s Blog
   ShowCodeCopyButtons: true
