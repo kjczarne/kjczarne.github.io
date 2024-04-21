@@ -60,7 +60,7 @@ showtoc = true
   url = "mailto://kjczarne@gmail.com"
 
   [[params.socialIcons]]
-  name = "google scholar"
+  name = "googlescholar"
   url = "https://scholar.google.com/citations?user=WPVIuxMAAAAJ&hl=en"
 
   [[params.socialIcons]]
