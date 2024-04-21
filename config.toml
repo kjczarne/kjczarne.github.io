@@ -4,7 +4,7 @@ title = "Chris"
 theme = "PaperMod"
 disqusShortname = "kjczarne"
 copyright = """
-Copyright 2024 Chris J. Czarnecki. Fair use permitted with authorship attribution. Commercial use disallowed without explicit permission. Some links in blog articles are affiliate links when noted.
+&copy; 2024 Chris J. Czarnecki. Fair use permitted with authorship attribution. Commercial use disallowed without explicit permission. Some links in blog articles are affiliate links when noted.
 """
 
 name = "Chris J. Czarnecki"
@@ -18,6 +18,7 @@ ShowShareButtons = true
 ShowReadingTime = true
 ShowCodeCopyButtons = true
 comments = true
+showtoc = true
 
   [params.homeInfoParams]
   Title = "Chris"
@@ -41,6 +42,11 @@ comments = true
     [[params.profileMode.buttons]]
     name = "CV"
     url = "/cv"
+
+    [[params.profileMode.buttons]]
+    name = "Papers"
+    url = "/papers"
+
     # [params.profileMode.newsletter]
     # name = "TinyLetter"
     # url = "https://tinyletter.com/kjczarne"
@@ -52,6 +58,14 @@ comments = true
   [[params.socialIcons]]
   name = "email"
   url = "mailto://kjczarne@gmail.com"
+
+  [[params.socialIcons]]
+  name = "google scholar"
+  url = "https://scholar.google.com/citations?user=WPVIuxMAAAAJ&hl=en"
+
+  [[params.socialIcons]]
+  name = "linkedin"
+  url = "https://scholar.google.com/citations?user=WPVIuxMAAAAJ&hl=en"
 
 #   [[params.socialIcons]]
 #   name = "medium"
@@ -70,10 +84,10 @@ comments = true
   minMatchCharLength = 0
   keys = [ "title", "permalink", "summary", "content" ]
 
-[cover]
-image = "/static/3c.png"
-alt = "logo"
-relative = true
+# [cover]
+# image = "/3c.png"
+# alt = "logo"
+# relative = true
 
 [[menu.main]]
 identifier = "search"
@@ -81,11 +95,11 @@ name = "search"
 url = "/search/"
 weight = 2
 
-[[menu.main]]
-identifier = "tags"
-name = "tags"
-url = "/tags/"
-weight = 3
+# [[menu.main]]
+# identifier = "tags"
+# name = "tags"
+# url = "/tags/"
+# weight = 3
 
 # [[menu.main]]
 # identifier = "categories"
@@ -110,3 +124,9 @@ identifier = "cv"
 name = "cv"
 url = "/cv/"
 weight = 4
+
+[[menu.main]]
+identifier = "papers"
+name = "papers"
+url = "/papers/"
+weight = 3
