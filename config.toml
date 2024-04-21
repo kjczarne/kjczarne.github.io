@@ -1,24 +1,112 @@
-# Site settings
-baseURL = "https://example.com"
-languageCode = "en-US"
-title = "Chris J. Czarnecki"
-theme = "theme-academic-cv"
-# disableKinds = ["section", "taxonomy", "RSS", "sitemap"]
-# disableHugoGeneratorInject = true
+baseURL = "http://kjczarne.github.io/"
+languageCode = "en-us"
+title = "Chris"
+theme = "PaperMod"
+disqusShortname = "kjczarne"
+copyright = """
+Copyright 2024 Chris J. Czarnecki. Fair use permitted with authorship attribution. Commercial use disallowed without explicit permission. Some links in blog articles are affiliate links when noted.
+"""
 
-[permalinks]
-  posts = "/:year/:month/:day/:title/"
-
-copyright = "&copy; 2024 Chris J. Czarnecki"
+name = "Chris J. Czarnecki"
 
 [outputs]
-  home = ["HTML", "RSS"]
-  section = ["HTML", "RSS"]
-  taxonomy = ["HTML", "RSS"]
+home = [ "HTML", "RSS", "JSON" ]
 
 [params]
+math = true
+ShowShareButtons = true
+ShowReadingTime = true
+ShowCodeCopyButtons = true
+comments = true
 
-  ShowReadingTime = true
-  ShowShareButtons = true
-  [params.author]
-  name = "Chris J. Czarnecki"
+  [params.homeInfoParams]
+  Title = "Chris"
+  Content = """
+**Krzysztof J. Czarnecki**'s Blog
+"""
+
+  [params.profileMode]
+  enabled = true
+  title = "Chris J. Czarnecki"
+  subtitle = "**Biotech -> SWE -> AI**"
+  imageUrl = "/k.png"
+  imageTitle = "<title of image as alt>"
+  imageWidth = 2000
+  imageHeight = 800
+
+    [[params.profileMode.buttons]]
+    name = "brainfarts"
+    url = "/posts"
+
+    [[params.profileMode.buttons]]
+    name = "CV"
+    url = "/cv"
+    # [params.profileMode.newsletter]
+    # name = "TinyLetter"
+    # url = "https://tinyletter.com/kjczarne"
+
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/kjczarne"
+
+  [[params.socialIcons]]
+  name = "email"
+  url = "mailto://kjczarne@gmail.com"
+
+#   [[params.socialIcons]]
+#   name = "medium"
+#   url = "https://medium.com/@krzysztofczarnecki"
+
+#   [[params.socialIcons]]
+#   name = "buymeacoffee"
+#   url = "https://www.buymeacoffee.com/kjczarne"
+
+  [params.fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  location = 0
+  distance = 1_000
+  threshold = 0.4
+  minMatchCharLength = 0
+  keys = [ "title", "permalink", "summary", "content" ]
+
+[cover]
+image = "/static/3c.png"
+alt = "logo"
+relative = true
+
+[[menu.main]]
+identifier = "search"
+name = "search"
+url = "/search/"
+weight = 2
+
+[[menu.main]]
+identifier = "tags"
+name = "tags"
+url = "/tags/"
+weight = 3
+
+# [[menu.main]]
+# identifier = "categories"
+# name = "categories"
+# url = "/categories/"
+# weight = 4
+
+[[menu.main]]
+identifier = "posts"
+name = "brainfarts"
+url = "/posts/"
+weight = 1
+
+[[menu.main]]
+identifier = "about"
+name = "about"
+url = "/about/"
+weight = 5
+
+[[menu.main]]
+identifier = "cv"
+name = "cv"
+url = "/cv/"
+weight = 4

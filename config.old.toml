@@ -1,0 +1,116 @@
+# Site settings
+baseURL = "https://kjczarnecki.com"
+languageCode = "en-US"
+title = "Chris J. Czarnecki"
+theme = "PaperMod"
+# disableKinds = ["section", "taxonomy", "RSS", "sitemap"]
+# disableHugoGeneratorInject = true
+
+[permalinks]
+  posts = "/:year/:month/:day/:title/"
+
+copyright = "&copy; 2024 Chris J. Czarnecki"
+
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = ""
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[params]
+
+  # Metadata for search engines and social sharing
+  author = "Chris J. Czarnecki"
+  description = "Chris J. Czarnecki is a software engineer and writer."
+  shareImage = "images/social.jpg"
+  ShowShareButtons = true
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+
+  [params.profileMode]
+    enable = true
+    title = "Chris J. Czarnecki"
+    subtitle = "Software Engineer and Writer"
+    imageUrl = "/me.png"
+    params.profileMode.buttons = [
+      {text = "Blog", url = "/posts/", newTab = false},
+    ]
+
+  # Favicon
+  favicon = "favicon.ico"
+
+  # Section - Visual
+  [params.visual]
+
+    # Image
+    [params.visual.image]
+      enable = true
+      file = "k.png"
+      position = "center center"
+
+    # Video
+    [params.visual.video]
+      enable = false
+      mute = true
+      file = "videos/background.mp4"
+      # youtubeId = "dk9uNWPP7EA"
+
+  # Links
+  #
+  # Links List #1
+  [[params.links]]
+    [params.links.list1]
+      heading = "Connect"
+
+      [[params.links.list1.link]]
+        text = "Blog"
+        url = "/posts/"
+        new_tab = true # new tab
+
+      [[params.links.list1.link]]
+        text = "Email"
+        url = "#"
+        new_tab = false # Default, open at same tab
+
+      [[params.links.list1.link]]
+        text = "Newsletter"
+        url = "#"
+
+  # Links List #2
+  [[params.links]]
+    [params.links.list2]
+      heading = "Social"
+
+      [[params.links.list2.link]]
+        text = "Twitter"
+        url = "#"
+
+      [[params.links.list2.link]]
+        text = "Instagram"
+        url = "#"
+
+      [[params.links.list2.link]]
+        text = "Dribbble"
+        url = "#"
+
+  # Links List #3
+  [[params.links]]
+    [params.links.list3]
+      heading = "Network"
+
+      [[params.links.list3.link]]
+        text = "Link One"
+        url = "#"
+
+      [[params.links.list3.link]]
+        text = "Link Two"
+        url = "#"
+
+      [[params.links.list3.link]]
+        text = "Link Three"
+        url = "#"
+
+  # The original template is released under the Creative Commons Attribution 3.0 License.
+  # Please keep the original attribution link when using for your own project.
+  # If you'd like to use the template without the attribution, you can check out
+  # the license option via the template author's website: https://onepagelove.com/split
