@@ -1,0 +1,24 @@
+# Site settings
+baseURL = "https://example.com"
+languageCode = "en-US"
+title = "Chris J. Czarnecki"
+theme = "theme-academic-cv"
+# disableKinds = ["section", "taxonomy", "RSS", "sitemap"]
+# disableHugoGeneratorInject = true
+
+[permalinks]
+  posts = "/:year/:month/:day/:title/"
+
+copyright = "&copy; 2024 Chris J. Czarnecki"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+
+[params]
+
+  ShowReadingTime = true
+  ShowShareButtons = true
+  [params.author]
+  name = "Chris J. Czarnecki"

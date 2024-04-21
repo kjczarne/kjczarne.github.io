@@ -1,0 +1,98 @@
+baseURL: 'http://kjczarne.github.io/'
+languageCode: 'en-us'
+title: 'Chris'
+theme: 'PaperMod'
+disqusShortname: kjczarne
+
+permalinks:
+  posts: /:year-:month-:day-:title/
+
+author:
+  name: Krzysztof J. Czarnecki
+copyright: >
+  Copyright 2021 Krzysztof J. Czarnecki. Fair use permitted with authorship
+  attribution. Commercial use disallowed without explicit permission. Some links
+  in blog articles are affiliate links when noted.
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary for search
+
+
+params:
+  ShowShareButtons: true
+  ShowReadingTime: true
+  homeInfoParams:
+    Title: Chris
+    Content: >
+      **Krzysztof J. Czarnecki**'s Blog
+  ShowCodeCopyButtons: true
+
+  profileMode:
+    enabled: true
+    title: "Chris J. Czarnecki" # optional default will be site title
+    subtitle: "**Biotech -> SWE -> AI**"
+    imageUrl: "/me.png" # optional
+    imageTitle: "<title of image as alt>" # optional
+    imageWidth: 300 # custom size
+    imageHeight: 300 # custom size
+    buttons:
+      - name: Blog
+        url: "/posts"
+    newsletter:
+      name: TinyLetter
+      url: https://tinyletter.com/kjczarne
+
+  socialIcons: # optional
+    - name: "github"
+      url: "https://github.com/kjczarne"
+    - name: "email"
+      url: "mailto://kjczarne@gmail.com"
+    - name: "medium"
+      url: "https://medium.com/@krzysztofczarnecki"
+    - name: "buymeacoffee"
+      url: "https://www.buymeacoffee.com/kjczarne"
+
+  fuseOpts:  # Fuse.JS Search
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+  
+  comments: true
+
+
+cover:
+  image: "/static/3c.png"
+  # can also paste direct link from external site
+  # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
+  alt: "logo"
+  relative: true # To use relative path for cover image, used in hugo Page-bundles
+
+menu:
+  main:
+  - identifier: search
+    name: search
+    url: /search/
+    weight: 2
+  - identifier: tags
+    name: tags
+    url: /tags/
+    weight: 3
+  - identifier: categories
+    name: categories
+    url: /categories/
+    weight: 4
+  - identifier: posts
+    name: posts
+    url: /posts/
+    weight: 1
+  - identifier: about
+    name: about
+    url: /about/
+    weight: 5
