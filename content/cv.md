@@ -21,8 +21,7 @@ showtoc: false
 
 # Curriculum Vitae
 
-<h2 id="chris-j.-czarnecki" style="color:#6b04d9">Chris J. Czarnecki</h2>
-
+<h2 id="chris-j.-czarnecki" style="color:#6b04d9;text-align:center">Chris J. Czarnecki</h2>
 <p style="text-align:center">[ <a href="https://kjczarnecki.com/">kjczarnecki.com</a> ] [
 <a href="mailto:kjczarne@gmail.com">kjczarne@gmail.com</a> ]</p>
 
@@ -39,7 +38,12 @@ showtoc: false
 #### (Dec 2019 - Aug 2022, Germany)
 
 - Developing tools for testing in-vehicle-network packet relay devices (Capture Modules) including packet parsers, test runners and test automation tools
-- Training in IVN protocols (CAN, LIN, FlexRay, Automotive Ethernet)
+    - [**Kalash** (GPLv3)](https://github.com/Technica-Engineering/kalash) (Sep 2021 - Aug 2022, project overloard)
+        - Test runner for systems test automation in automotive developed for a team of 4 QA Engineers
+        - Significantly reduced the test debugging time for complex Ethernet-hardware testing platforms
+    - **Kissy Packet Parsers** (proprietary) (Jul 2020 - Aug 2022, co-maintainer)
+    - **Prost** (proprietary) (Dec 2019 - Aug 2022, co-maintainer)
+        - High-level Python API for a team of 9 QA Engineers for hardware testing of CAN, LIN, FlexRay and Ethernet devices
 - Managing and deploying CI systems (GitLab CI, Jenkins)
 
 ### BSc Research Student at Systems Biology Department, University of Warsaw / IBB Polish Academy of Sciences
@@ -51,56 +55,36 @@ showtoc: false
 ## Awards & Recognition
 
 - [International Master's Award of Excellence](https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/awards/international-masters-award-excellence-imae)
+- [Devon Stoneman Memorial Award](https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/awards/devon-stoneman-memorial-award)
 
 ## Research Projects
 
 - **Hierarchical explainability for scRNA foundational models** (Mar 2024 - now)
     - Exploration of hierarchical-SHAP with pathway priors
     - Analysis of the computational efficiency and interpretability improvement over direct application of SHAP
-    - _Research in progress_
-- **SHAP AdaPool** (Jan 2024 - now)
+- [**SHAP AdaPool**](https://github.com/kjczarne/shap_adapool) (Jan 2024 - now)
     - Research project exploring different combinations of Shapley Value attribution scores to evaluate human-interpretability of varying explanation styles
-    - [open-source](https://github.com/kjczarne/shap_adapool)
-    - 1st author
-    - _Publication pending_
 - **UArr** (Oct 2023 - now)
     - Research project focusing on applying modern image denosing methods to DNA Microarray images
     - Improved on 2020 SOTA from $20.05$ PSNR to $19.88$ PSNR
-    - [code available on request (access-restricted)](https://github.com/kjczarne/uarr)
-    - 1st author
-    - _Publication pending_
 - **NutritionVerse Utensil Estimation** (Jan 2024 - now)
     - Conceptualization of a camera-tracking system for volumetric estimation of food items on the utensil
-    - _Publication accepted_ to the [CVPR MetaFood Workshop](https://sites.google.com/view/cvpr-metafood-2024/)
-    - 1st co-author
 - **NutritionVerse-3D-2.0** (Sep 2023 - now)
     - Leading a team of undergraduate students conducting data collection activities
     - Development of a data capture and post-processing pipeline for 3D models of food items
-    - _Publication pending_
-- **DC-AC for skin cancer detection** (Nov 2023)
+- **DC-AC for skin cancer detection** (Nov 2023) \[1\]
     - Application of the Double-Condensing Attention Condenser architecture to skin cancer detection
-    - Contributing author
-    - _Publication available on_ [ArXiV](https://arxiv.org/abs/2311.11656)
+- [**DNAP**](https://github.com/kjczarne/dnap) (Jul 2023 - Aug 2023)
+    - Exploring alternative DNA tokenization strategies for genomic language models ([Nucleotide Transformer](https://github.com/instadeepai/nucleotide-transformer) and [DNABERT](https://github.com/jerryji1993/DNABERT))
 
 ## Projects
 
-- **ConvAI (a.k.a. Symptom-Comm)** (Jul 2023 - Aug 2023)
+- [**ConvAI (a.k.a. Symptom-Comm)**](https://github.com/kjczarne/symptom-comm) (Jul 2023 - Aug 2023)
     - Proof-of-concept AI-driven adaptive intake form system for patients
     - Offloading the work of intake specialists and solving the problem of communication in foreign languages
     - Pitched at the NSERC 2023 CREATE Summer School and Design Challenge Pitch Day
-    - [open-source](https://github.com/kjczarne/symptom-comm)
-- **DNAP** (Jul 2023 - Aug 2023)
-    - Exploring alternative DNA tokenization strategies for genomic language models ([Nucleotide Transformer](https://github.com/instadeepai/nucleotide-transformer) and [DNABERT](https://github.com/jerryji1993/DNABERT))
-    - Course Project (MSCI 700)
-    - [open-source](https://github.com/kjczarne/dnap)
-- **Kalash** (Sep 2021 - Jul 2022)
-    - Test runner for systems test automation in automotive
-    - Improved test suite representation and test filtering for a team of 4 QA Engineers
-    - Significantly reduced the test debugging time for complex Ethernet-hardware testing platforms
-    - [open-source (GPLv3)](https://github.com/Technica-Engineering/kalash)
-- **Spocktest** (May 2021)
+- [**Spocktest** (MIT)](https://github.com/kjczarne/spocktest) (May 2021)
     - Injects test snippets from `unittest` tests into project documentation
-    - [open-source (MIT)](https://github.com/kjczarne/spocktest)
 - **Fubar** (Apr 2019 - Jul 2019)
     - Proof-of-concept CNN-based system for user-compliance incentivization
     - Detection and classification of bike locks locked to street furniture
@@ -134,3 +118,7 @@ showtoc: false
 - Producing horrible screeches on my guitar (usually tuned in Drop-D)
 - Casual 10k runs
 - Learning random words in random languages
+
+## Publication References
+
+\[1\] C. A. Tai, E. Janes, C. Czarnecki, and A. Wong, ‘Double-Condensing Attention Condenser: Leveraging Attention in Deep Learning to Detect Skin Cancer from Skin Lesion Images’. arXiv, Nov. 20, 2023. doi: [10.48550/arXiv.2311.11656](https://doi.org/10.48550/arXiv.2311.11656).
