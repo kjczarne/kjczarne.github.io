@@ -39,8 +39,8 @@ showtoc: false
 
 - Developing tools for testing in-vehicle-network packet relay devices (Capture Modules) including packet parsers, test runners and test automation tools
     - [**Kalash** (GPLv3)](https://github.com/Technica-Engineering/kalash) (Sep 2021 - Aug 2022, project overloard)
-        - Test runner for systems test automation in automotive developed for a team of 4 QA Engineers
-        - Significantly reduced the test debugging time for complex Ethernet-hardware testing platforms
+        - Test runner for systems test automation in automotive developed for a team of 5 QA Engineers
+        - Reduced the test debugging time for complex Ethernet-hardware testing platforms by 30 min per day per engineer
     - **Kissy Packet Parsers** (proprietary) (Jul 2020 - Aug 2022, co-maintainer)
     - **Prost** (proprietary) (Dec 2019 - Aug 2022, co-maintainer)
         - High-level Python API for a team of 9 QA Engineers for hardware testing of CAN, LIN, FlexRay and Ethernet devices
@@ -59,14 +59,14 @@ showtoc: false
 
 ## Research Projects
 
-- **Hierarchical explainability for scRNA foundational models** (Mar 2024 - now)
-    - Exploration of hierarchical-SHAP with pathway priors
-    - Analysis of the computational efficiency and interpretability improvement over direct application of SHAP
-- [**SHAP AdaPool**](https://github.com/kjczarne/shap_adapool) (Jan 2024 - now)
-    - Research project exploring different combinations of Shapley Value attribution scores to evaluate human-interpretability of varying explanation styles
 - **UArr** (Oct 2023 - now)
     - Research project focusing on applying modern image denosing methods to DNA Microarray images
     - Improved on 2020 SOTA from $20.05$ PSNR to $19.88$ PSNR
+- **Hierarchical explainability for scRNA foundational models** (Mar 2024 - now)
+    - Exploration of hierarchical-SHAP with pathway priors on scGPT
+    - Analysis of the computational efficiency and interpretability improvement over direct application of SHAP
+- [**SHAP AdaPool**](https://github.com/kjczarne/shap_adapool) (Jan 2024 - now)
+    - Research project exploring different combinations of Shapley Value attribution scores to evaluate human-interpretability of varying explanation styles
 - **NutritionVerse Utensil Estimation** (Jan 2024 - now)
     - Conceptualization of a camera-tracking system for volumetric estimation of food items on the utensil
 - **NutritionVerse-3D-2.0** (Sep 2023 - now)
