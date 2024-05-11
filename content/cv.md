@@ -14,16 +14,18 @@ keywords:
 author:
   - Chris J. Czarnecki
 subject: 'Curriculum Vitae'
+title: 'Curriculum Vitae'
 noComment: true
 ShowReadingTime: false
 showtoc: false
 ---
 
-# Curriculum Vitae
+<h1 style="color:#6b04d9;text-align:center"> Curriculum Vitae </h1>
 
 <h2 id="chris-j.-czarnecki" style="color:#6b04d9;text-align:center">Chris J. Czarnecki</h2>
 <p style="text-align:center">[ <a href="https://kjczarnecki.com/">kjczarnecki.com</a> ] [
 <a href="mailto:kjczarne@gmail.com">kjczarne@gmail.com</a> ]</p>
+<p style="text-align:center">ORCID: <a href="https://orcid.org/0009-0008-3721-6151">0009-0008-3721-6151</a></p>
 
 ## Skills
 
@@ -38,7 +40,7 @@ showtoc: false
 #### (Dec 2019 - Aug 2022, Germany)
 
 - Developing tools for testing in-vehicle-network packet relay devices (Capture Modules) including packet parsers, test runners and test automation tools
-    - [**Kalash** (GPLv3)](https://github.com/Technica-Engineering/kalash) (Sep 2021 - Aug 2022, project overloard)
+    - [**Kalash** (GPLv3)](https://github.com/Technica-Engineering/kalash) (Sep 2021 - Aug 2022, project overlord)
         - Test runner for systems test automation in automotive developed for a team of 5 QA Engineers
         - Reduced the test debugging time for complex Ethernet-hardware testing platforms by 30 min per day per engineer
     - **Kissy Packet Parsers** (proprietary) (Jul 2020 - Aug 2022, co-maintainer)
@@ -67,9 +69,10 @@ showtoc: false
     - Analysis of the computational efficiency and interpretability improvement over direct application of SHAP
 - [**SHAP AdaPool**](https://github.com/kjczarne/shap_adapool) (Jan 2024 - now)
     - Research project exploring different combinations of Shapley Value attribution scores to evaluate human-interpretability of varying explanation styles
-- **NutritionVerse Utensil Estimation** (Jan 2024 - now)
+- **NutritionVerse Utensil Estimation** (Jan 2024 - April 2024)
     - Conceptualization of a camera-tracking system for volumetric estimation of food items on the utensil
-- **NutritionVerse-3D-2.0** (Sep 2023 - now)
+- **NutritionVerse Plate Ellipse Fitting** (Jan 2024 - April 2024)
+- **NutritionVerse-3D-2.0** (Sep 2023 - April 2024)
     - Leading a team of undergraduate students conducting data collection activities
     - Development of a data capture and post-processing pipeline for 3D models of food items
 - **DC-AC for skin cancer detection** (Nov 2023) \[1\]
@@ -103,21 +106,6 @@ showtoc: false
 - 🇩🇪 German (advanced, C1)
 - 🇳🇱 Dutch (basic, A1)
 - 🇵🇱 Polish (native)
-
-### Personal preferences
-
-- macOS/Linux $\gg$ Windows
-- PyTorch $>$ TensorFlow
-- Functional programming $\gg$ OOP
-- Any programming language $>$ Java
-- DD/MM/YYYY $>$ YYYY/MM/DD $>$ MM/DD/YYYY
-- Vim $\gg$ Emacs
-
-### Hobbies
-
-- Producing horrible screeches on my guitar (usually tuned in Drop-D)
-- Casual 10k runs
-- Learning random words in random languages
 
 ## Publication References
 
