@@ -69,11 +69,12 @@ showtoc: false
     - Analysis of the computational efficiency and interpretability improvement over direct application of SHAP
 - [**SHAP AdaPool**](https://github.com/kjczarne/shap_adapool) (Jan 2024 - now)
     - Research project exploring different combinations of Shapley Value attribution scores to evaluate human-interpretability of varying explanation styles
-    - XAI project building on \[4\]
-- **NutritionVerse Utensil Estimation** (Jan 2024 - April 2024) \[3\]
+- **UArr** (Oct 2023 - now)
+    - Research project focusing on applying modern image denosing methods to DNA Microarray images
+    - Improved on 2020 SOTA from $20.05$ PSNR to $19.88$ PSNR
+- **NutritionVerse Utensil Estimation** (Jan 2024 - now)
     - Conceptualization of a camera-tracking system for volumetric estimation of food items on the utensil
-- **NutritionVerse Plate Ellipse Fitting** (Jan 2024 - April 2024) \[2\]
-- **NutritionVerse-3D-2.0** (Sep 2023 - April 2024)
+- **NutritionVerse-3D-2.0** (Sep 2023 - now)
     - Leading a team of undergraduate students conducting data collection activities
     - Development of a data capture and post-processing pipeline for 3D models of food items
 - **DC-AC for skin cancer detection** (Nov 2023) \[1\]
