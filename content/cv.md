@@ -48,6 +48,8 @@ showtoc: false
         - High-level Python API for a team of 9 QA Engineers for hardware testing of CAN, LIN, FlexRay and Ethernet devices
 - Managing and deploying CI systems (GitLab CI, Jenkins)
 
+<div class="pagebreak"> </div>
+
 ### BSc Research Student at Systems Biology Department, University of Warsaw / IBB Polish Academy of Sciences
 #### (Oct 2017 - Jul 2018)
 
@@ -69,12 +71,11 @@ showtoc: false
     - Analysis of the computational efficiency and interpretability improvement over direct application of SHAP
 - [**SHAP AdaPool**](https://github.com/kjczarne/shap_adapool) (Jan 2024 - now)
     - Research project exploring different combinations of Shapley Value attribution scores to evaluate human-interpretability of varying explanation styles
-- **UArr** (Oct 2023 - now)
-    - Research project focusing on applying modern image denosing methods to DNA Microarray images
-    - Improved on 2020 SOTA from $20.05$ PSNR to $19.88$ PSNR
-- **NutritionVerse Utensil Estimation** (Jan 2024 - now)
+    - XAI project building on \[4\]
+- **NutritionVerse Utensil Estimation** (Jan 2024 - April 2024) \[3\]
     - Conceptualization of a camera-tracking system for volumetric estimation of food items on the utensil
-- **NutritionVerse-3D-2.0** (Sep 2023 - now)
+- **NutritionVerse Plate Ellipse Fitting** (Jan 2024 - April 2024) \[2\]
+- **NutritionVerse-3D-2.0** (Sep 2023 - April 2024)
     - Leading a team of undergraduate students conducting data collection activities
     - Development of a data capture and post-processing pipeline for 3D models of food items
 - **DC-AC for skin cancer detection** (Nov 2023) \[1\]
@@ -104,17 +105,19 @@ showtoc: false
 
 ### Languages
 
-- 🇬🇧 English (fluent, C2)
-- 🇩🇪 German (advanced, C1)
-- 🇳🇱 Dutch (basic, A1)
-- 🇵🇱 Polish (native)
+<p style="text-align:center">[ 🇬🇧 English (fluent, C2); 🇩🇪 German (advanced, C1); 🇳🇱 Dutch (basic, A1); 🇵🇱 Polish (native) ] </p>
 
 ## Publication References
 
-\[1\] C. A. Tai, E. Janes, C. Czarnecki, and A. Wong, ‘Double-Condensing Attention Condenser: Leveraging Attention in Deep Learning to Detect Skin Cancer from Skin Lesion Images’. arXiv, Nov. 20, 2023. doi: [10.48550/arXiv.2311.11656](https://doi.org/10.48550/arXiv.2311.11656).
-
-\[2\] A. Pathiranage, C. Czarnecki, Y. Chen, P. Xi, L. Xu, and A. Wong, ‘In The Wild Ellipse Parameter Estimation for Circular Dining Plates and Bowls’. arXiv, May 11, 2024. Accessed: May 14, 2024. [Online]. Available: [http://arxiv.org/abs/2405.07121](http://arxiv.org/abs/2405.07121)
-
-\[3\] A. Sharma, C. Czarnecki, Y. Chen, P. Xi, L. Xu, and A. Wong, ‘How Much You Ate? Food Portion Estimation on Spoons’. arXiv, May 11, 2024. doi: [10.48550/arXiv.2405.08717](https://doi.org/10.48550/arXiv.2405.08717).
-
-\[4\] D. Lu _et al._, ‘Integrating deep transformer and temporal convolutional networks for SMEs revenue and employment growth prediction’, _Expert Systems with Applications_, vol. 252, p. 124129, Oct. 2024, doi: [10.1016/j.eswa.2024.124129](https://doi.org/10.1016/j.eswa.2024.124129).
+<p style="font-size: x-small">
+[1] C. A. Tai, E. Janes, C. Czarnecki, and A. Wong, ‘Double-Condensing Attention Condenser: Leveraging Attention in Deep Learning to Detect Skin Cancer from Skin Lesion Images’. arXiv, Nov. 20, 2023. doi: [10.48550/arXiv.2311.11656](https://doi.org/10.48550/arXiv.2311.11656).
+<br/>
+<br/>
+[2] A. Pathiranage, C. Czarnecki, Y. Chen, P. Xi, L. Xu, and A. Wong, ‘In The Wild Ellipse Parameter Estimation for Circular Dining Plates and Bowls’. arXiv, May 11, 2024. Accessed: May 14, 2024. [Online]. Available: [http://arxiv.org/abs/2405.07121](http://arxiv.org/abs/2405.07121)
+<br/>
+<br/>
+[3] A. Sharma, C. Czarnecki, Y. Chen, P. Xi, L. Xu, and A. Wong, ‘How Much You Ate? Food Portion Estimation on Spoons’. arXiv, May 11, 2024. doi: [10.48550/arXiv.2405.08717](https://doi.org/10.48550/arXiv.2405.08717).
+<br/>
+<br/>
+[4] D. Lu _et al._, ‘Integrating deep transformer and temporal convolutional networks for SMEs revenue and employment growth prediction’, _Expert Systems with Applications_, vol. 252, p. 124129, Oct. 2024, doi: [10.1016/j.eswa.2024.124129](https://doi.org/10.1016/j.eswa.2024.124129).
+</p>
