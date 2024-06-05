@@ -28,32 +28,6 @@ python: 100
 <a href="mailto:kjczarne@gmail.com">kjczarne@gmail.com</a> ]</p>
 <p style="text-align:center">ORCID: <a href="https://orcid.org/0009-0008-3721-6151">0009-0008-3721-6151</a></p>
 
-## Skills
-
-|                                 |                                                        | Confidence                                                  |
-| ------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
-| **Programming**                 | <label for="python">Python</label>                     | <progress id="python" value="100" max="100"></progress>     |
-|                                 | <label for="csharp">C#, F#</label>                     | <progress id="csharp" value="80" max="100"></progress>      |
-|                                 | <label for="rust">Rust, TypeScript:</label>            | <progress id="rust" value="60" max="100"></progress>        |
-|                                 | <label for="cpp">C++</label>                           | <progress id="cpp" value="50" max="100"></progress>         |
-| **AI/ML Frameworks**            | <label for="pytorch">PyTorch</label>                   | <progress id="pytorch" value="90" max="100"></progress>     |
-|                                 | <label for="sklearn">Scikit-Learn</label>              | <progress id="sklearn" value="85" max="100"></progress>     |
-|                                 | <label for="tensorflow">TensorFlow</label>             | <progress id="tensorflow" value="60" max="100"></progress>  |
-|                                 | <label for="jax">JAX</label>                           | <progress id="jax" value="50" max="100"></progress>         |
-| **DevOps and Data Engineering** | <label for="docker">Docker, Docker-Compose</label>     | <progress id="docker" value="90" max="100"></progress>      |
-|                                 | <label for="ci">Jenkins, GitLab CI</label>             | <progress id="ci" value="90" max="100"></progress>          |
-|                                 | <label for="airflow">Apache Airflow</label>            | <progress id="airflow" value="60" max="100"></progress>     |
-|                                 | <label for="slurm">SLURM</label>                       | <progress id="slurm" value="60" max="100"></progress>       |
-| **Project Management**          | <label for="gh-projects">GitHub Projects, JIRA</label> | <progress id="gh-projects" value="85" max="100"></progress> |
-|                                 | <label for="leadership">Leadership skills</label>      | <progress id="leadership" value="85" max="100"></progress>  |
-| **Graphics and CV Tools**       | <label for="blender">Torchvision</label>               | <progress id="blender" value="85" max="100"></progress>     |
-|                                 | <label for="gimp">GIMP</label>                         | <progress id="gimp" value="75" max="100"></progress>        |
-|                                 | <label for="blender">PIL/OpenCV</label>                | <progress id="blender" value="65" max="100"></progress>     |
-|                                 | <label for="blender">Blender</label>                   | <progress id="blender" value="65" max="100"></progress>     |
-| **Biotech skills**              | <label for="elfo">Electrophoresis</label>              | <progress id="elfo" value="90" max="100"></progress>        |
-|                                 | <label for="pcr">PCR</label>                           | <progress id="pcr" value="80" max="100"></progress>         |
-|                                 | <label for="cdna">Total cDNA preparation</label>       | <progress id="cdna" value="80" max="100"></progress>        |
-
 ## Experience
 
 ### Junior SW Developer at Technica Engineering GmbH
@@ -61,8 +35,8 @@ python: 100
 
 - Hardware testing infrastructure development
     - [**Kalash** (GPLv3)](https://github.com/Technica-Engineering/kalash) (Sep 2021 - Aug 2022, project overlord)
-        - Test runner for systems test automation in automotive developed for a team of 5 QA Engineers
-        - Reduced the test debugging time for complex Ethernet-hardware testing platforms by 30 min per day per engineer
+        - Test automation runner, systems testing for automotive industry
+        - Reduced test debugging time for complex Ethernet-hardware testing platforms by 30 min per day per engineer
     - **Kissy Packet Parsers** (proprietary) (Jul 2020 - Aug 2022, co-maintainer)
     - **Prost** (proprietary) (Dec 2019 - Aug 2022, co-maintainer)
         - High-level Python API for a team of 9 QA Engineers for hardware testing of CAN, LIN, FlexRay and Ethernet devices
@@ -104,6 +78,37 @@ python: 100
 - **MASc Systems Design Engineering, University of Waterloo** (Sep 2022 - Sep 2024, 89.75\% GPA)
 - **Data Science Retreat Bootcamp, Berlin** (Apr 2019 - Jul 2019)
 - **BSc Biotechnology, University of Warsaw** (Oct 2015 - Jul 2018, 4/5 final grade)
+
+## Skills
+
+|                                 |                                                        | Confidence                                                  |
+| ------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
+| **Programming**                 | <label for="python">Python</label>                     | <progress id="python" value="100" max="100"></progress>     |
+|                                 | <label for="csharp">C#, F#</label>                     | <progress id="csharp" value="80" max="100"></progress>      |
+|                                 | <label for="rust">Rust, TypeScript:</label>            | <progress id="rust" value="60" max="100"></progress>        |
+|                                 | <label for="cpp">C++</label>                           | <progress id="cpp" value="50" max="100"></progress>         |
+|                                 | <label for="api">API Development</label>                           | <progress id="api" value="90" max="100"></progress>         |
+|                                 | <label for="automation">Automation</label>                           | <progress id="automation" value="90" max="100"></progress>         |
+| **AI/ML**            | <label for="pytorch">PyTorch</label>                   | <progress id="pytorch" value="90" max="100"></progress>     |
+|                                 | <label for="sklearn">Scikit-Learn</label>              | <progress id="sklearn" value="85" max="100"></progress>     |
+|                                 | <label for="tensorflow">TensorFlow</label>             | <progress id="tensorflow" value="60" max="100"></progress>  |
+|                                 | <label for="jax">JAX</label>                           | <progress id="jax" value="50" max="100"></progress>         |
+|                                 | <label for="nlp">NLP</label>                           | <progress id="nlp" value="75" max="100"></progress>         |
+|                                 | <label for="computer-vision">Computer Vision</label>                           | <progress id="computer-vision" value="80" max="100"></progress>         |
+| **DevOps and Data Engineering** | <label for="docker">Docker, Docker-Compose</label>     | <progress id="docker" value="90" max="100"></progress>      |
+|                                 | <label for="ci">Jenkins, GitLab CI</label>             | <progress id="ci" value="90" max="100"></progress>          |
+|                                 | <label for="airflow">Apache Airflow</label>            | <progress id="airflow" value="60" max="100"></progress>     |
+|                                 | <label for="slurm">SLURM</label>                       | <progress id="slurm" value="60" max="100"></progress>       |
+|                                 | <label for="data">Data collection and curation</label>                       | <progress id="data" value="95" max="100"></progress>       |
+| **Project Management**          | <label for="gh-projects">GitHub Projects, JIRA</label> | <progress id="gh-projects" value="85" max="100"></progress> |
+|                                 | <label for="leadership">Leadership skills</label>      | <progress id="leadership" value="85" max="100"></progress>  |
+| **Graphics and CV Tools**       | <label for="blender">Torchvision</label>               | <progress id="blender" value="85" max="100"></progress>     |
+|                                 | <label for="gimp">GIMP</label>                         | <progress id="gimp" value="75" max="100"></progress>        |
+|                                 | <label for="blender">PIL/OpenCV</label>                | <progress id="blender" value="65" max="100"></progress>     |
+|                                 | <label for="blender">Blender</label>                   | <progress id="blender" value="65" max="100"></progress>     |
+| **Biotech skills**              | <label for="elfo">Electrophoresis</label>              | <progress id="elfo" value="90" max="100"></progress>        |
+|                                 | <label for="pcr">PCR</label>                           | <progress id="pcr" value="80" max="100"></progress>         |
+|                                 | <label for="cdna">Total cDNA preparation</label>       | <progress id="cdna" value="80" max="100"></progress>        |
 
 ## Additional info
 
