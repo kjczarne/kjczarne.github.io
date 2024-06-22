@@ -11,6 +11,7 @@ keywords:
   - 'biotechnology'
   - 'biology'
   - 'genomics'
+  - 'software'
 author:
   - Chris J. Czarnecki
 subject: 'Curriculum Vitae'
