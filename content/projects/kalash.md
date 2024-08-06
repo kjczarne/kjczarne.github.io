@@ -3,7 +3,6 @@ title: "Kalash"
 date: 2024-08-05T20:59:59-04:00
 showToc: false
 noComment: true
-draft: true
 tags:
   - project
 ---

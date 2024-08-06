@@ -3,7 +3,6 @@ title: "Uarr"
 date: 2024-08-05T21:00:39-04:00
 showToc: false
 noComment: true
-draft: true
 tags:
   - project
 ---

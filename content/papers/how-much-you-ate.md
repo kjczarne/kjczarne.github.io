@@ -3,7 +3,6 @@ title: "How Much You Ate"
 date: 2024-08-03T14:25:47-04:00
 showToc: false
 noComment: true
-draft: true
 tags:
   - paper
 ---
