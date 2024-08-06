@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Microarray Denoising Slides</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/serif.css" id="theme">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme"> -->
+  <style>
+    :root {
+      --r-main-font-size: 30px;
+    }
+    .reveal h1 {
+      font-size: 2.15em;
+    }
+    .reveal h2 {
+      font-size: 1.75em;
+    }
+    .reveal h3 {
+      font-size: 1.15em;
+    }
+    .reveal h4 {
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+<section id="microarray-image-denoising"
+class="title-slide slide level1"
+data-heading="Microarray Image Denoising" dir="auto">
+
+<div style="display: flex; flex-direction: column; align-items: center; height: 100vh; justify-content: top;">
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <img data-src="uw-logo-2.png"
+         class="internal-embed" data-touched="true" width="120" alt="uw-logo" style="margin-right: 10px;" />
+    <img data-src="viplogo-1.png"
+         class="internal-embed" data-touched="true" width="120" alt="vip-logo" />
+  </div>
+  <h1 data-heading="Microarray Image Denoising" style="margin-top: 80px; text-align: center;" dir="auto">Microarray
+  Image Denoising</h1>
+  <h2
+  style="margin-top: 20px; text-align: center;"
+  data-heading="Leveraging Autoencoders and Attention-Based Architectures with Synthetic Training Data"
+  dir="auto">Leveraging Autoencoders<br/>and Attention-Based Architectures
+  with Synthetic Training Data</h2>
+  <h3
+  style="margin-top: 20px; text-align: center;"
+  data-heading="Chris Czarnecki" dir="auto" id="chris-czarnecki">Chris
+  Czarnecki, Krish Shah, Alexander Wong</h3>
+</div>
+
+</section>
+
+<section id="outline" class="slide level1" data-heading="Outline"
+dir="auto">
+<h2 data-heading="Outline" dir="auto">Outline</h2>
+<div id="content"><ul>
+  <li>What are microarrays?</li>
+  <li>How microarrays are read?</li>
+  <li>The problem we're addressing – noise</li>
+  <li>Prior works</li>
+  <li>Synthetic data generation</li>
+  <li>Discussion on metrics and alternative denoising methods</li>
+  <li>New metric for microarray denoising models</li>
+  <li>New state-of-the-art model for microarray denoising</li>
+  <li>Q&amp;A</li>
+</section>
+<section id="what-are-microarrays" class="slide level1"
+data-heading="What are microarrays?" dir="auto">
+<h2 data-heading="What are microarrays?" dir="auto">What are
+microarrays?</h2>
+<p><img data-src="microarray_example.svg.png"
+class="internal-embed" data-touched="true" width="500"
+alt="microarray_example.svg.png" /></p>
+</section>
+
+<section class="slide level1">
+
+<p><img data-src="lymphocyte-vs-neuron.png"
+class="internal-embed" data-touched="true"
+alt="transcription-initiation.png" /></p>
+</section>
+
+<section class="slide level1">
+
+<p><img data-src="transcription-initiation.png"
+class="internal-embed" data-touched="true"
+alt="transcription-initiation.png" /></p>
+</section>
+<section class="slide level1">
+
+<p><img
+data-src="microarrays-general-principle.png"
+class="internal-embed" data-touched="true"
+alt="microarrays-general-principle.png" /></p>
+</section>
+<section id="reading-information-from-microarray-images"
+class="slide level1"
+data-heading="Reading information from microarray images" dir="auto">
+<h2 data-heading="Reading information from microarray images"
+dir="auto">Reading information from microarray images</h2>
+<br/> <br/>
+<div class="callout" data-callout-metadata="" data-callout-fold=""
+data-callout="example" dir="auto">
+<div class="callout-title" dir="auto">
+<div class="callout-icon" dir="auto">
+<img
+data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAANVJREFUaEPtll0KhDAMhMeb6cmWPZkeTQorLGjFNLNZEqYvvuSv3ww2E5KfKfn80AX+raAUkAJOArKQE6A7vaQCM4DXB80bwNbBdMS1b8Rpc5zmuVJgBXAM1ZKWznTfcREXaD1O85S8QHoLRdmB0qfkX4hCJqqIFIgi3esjBaSAk8CVhdI/ZNqFnK64S3+0zKW30A8B8kvrHeAztVWUAjZe/GgpwGdqq1hSgfQPmXYhm4tN0dqFTLgigkv+hSLA0XpIARrKwUJSYBAcLU0K0FAOFkqvwA45YTYx90F9GgAAAABJRU5ErkJggg=="
+width="24" height="24" />
+</div>
+<div class="callout-title-inner" dir="auto">
+Example
+</div>
+</div>
+<div class="callout-content" dir="auto">
+<p>Suppose you are given a virus that has just 4 genes in its genome and
+you want to study which genes are active in the early infection stage
+vs. late infection stage.</p>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<p><img
+data-src="hypothetical-virus.drawio.png"
+class="internal-embed" data-touched="true"
+alt="hypothetical-virus.drawio.png" /></p>
+</section>
+<section id="things-to-remember" class="slide level1"
+data-heading="Things to remember" dir="auto">
+<h2 data-heading="Things to remember" dir="auto">Things to remember</h2>
+<ul>
+<li>Each dot position corresponds to a specific sequence (e.g. a
+gene)</li>
+<li>The intensity of each dot can be measured and compared against a
+control sample</li>
+<li>The relative intensity of each dot corresponds to the quantity of a
+given sequence in a sample (e.g. gene mRNA in a particular virus)</li>
+</ul>
+</section>
+<section id="but-whats-the-problem" class="slide level1"
+data-heading="But what&#39;s the problem?" dir="auto">
+<h2 data-heading="But what&#39;s the problem?" dir="auto">But what's the
+problem?</h2>
+<p><strong>Noise</strong>:</p>
+<ul>
+<li>Dust particles and dirt that gets onto the glass slide during
+preparation</li>
+<li>Noise from the scanning process</li>
+</ul>
+<br/> <br/>
+<div class="callout" data-callout-metadata="" data-callout-fold=""
+data-callout="danger" dir="auto">
+<div class="callout-title" dir="auto">
+<div class="callout-icon" dir="auto">
+<img
+data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAd9JREFUaEPVmWtuxCAMhL0n6/ZkbU+27claWdpI1BmCDWMW8juP+fwYA7nJ5tdtc/0yA+DzGaQ3EfkSkW9m0LIB7iLyKASr+PedAH6BWGrQqC8zYjXymoHy2iYDWvcfIPpbANTEK4828dHUlFZgl9CV+OUBrOOgCKsDLWujyHEsxLIAyHG03m0js0uWMolR3R/NarOyHMCV+PQprPU5EhEkvvT5pQFqjlMGxALSZ8BIBpDjWIexjb0MQM1x7IS199EttCcDV01rPR+BjiwftL9O+4lIE0fEq1DPYOsB+qfZC9ByHCSEnQH9xmk16wHwOA4C0Od0Ets9QU/Uj2dOfeQB8DjOiCj0rLtcWwBex2ECuMW3XCj0IhJBuNdqGXiF+K5eQwCejUkk4NC/wQu6eg0BTLE/xwmGa+mBAKYMoAJgqFxrJcT279pxypD4lgtF6tze69kLhB0HCWrNgV6I1l6gy3FmArT2Al2O80qAcg1Dne5ZJVTbzAw3rc1CFgA6TqGLz3QhC4AOuSgn1RkZ8C5FKN+mvMTUpQeAtsHPAJh6xJ4BcLUYdC3QItNzJgBdfJYLTfm5d2QpIwPpv1bLEssAmHKkmJmB4zzo5/kR6l/JWUuJiJEM3ZtRQkOCog//AWJsgDHfN00JAAAAAElFTkSuQmCC"
+width="24" height="24" />
+</div>
+<div class="callout-title-inner" dir="auto">
+Problem
+</div>
+</div>
+<div class="callout-content" dir="auto">
+<p><strong>Repeating experiments in a wet lab is expensive</strong></p>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<p><img data-src="derisi-speck.png"
+class="internal-embed" data-touched="true" width="500"
+alt="derisi-speck.png" /></p>
+</section>
+<section id="how-prior-works-approached-this" class="slide level1"
+data-heading="How prior works approached this?" dir="auto">
+<h2 data-heading="How prior works approached this?" dir="auto">How prior
+works approached this?</h2>
+<ul>
+<li>Up to 2020, only classical methods have been used</li>
+<li>2020 marks the first and only (to date) application of a
+deep-learning denoising method (Mohandas <em>et al</em>.
+[1])</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h3
+data-heading="Example of classical denoising – Wavelet Transform Denoising"
+dir="auto"
+id="example-of-classical-denoising-wavelet-transform-denoising">Example
+of classical denoising – Wavelet Transform Denoising</h3>
+<p>Wavelet Transform Denoising applies to images by decomposing them
+into localized frequency components in the spatial domain.</p>
+<p>The discrete wavelet transform (DWT) of a signal <span
+class="math math-inline is-loaded"></span> can be expressed as:</p>
+<p><span class="math math-block is-loaded">
+$$W_{j,k} = \langle f(t), \psi_{j,k}(t) \rangle$$
+</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math math-inline is-loaded">\(\psi_{j,k}(t)\)</span> are the wavelet
+basis functions at scale <span
+class="math math-inline is-loaded">j</span> and position <span
+class="math math-inline is-loaded">k</span></li>
+<li><span class="math math-inline is-loaded">\(\langle \cdot, \cdot \rangle\)</span> denotes the inner
+product</li>
+</ul>
+<p>The noisy signal <span class="math math-inline is-loaded">f(t)</span> is
+decomposed into wavelet coefficients using the DWT:</p>
+<p><span class="math math-block is-loaded"></span>$$\{W_{j,k}\} = \text{DWT}(f(t))$$</p>
+</section>
+<section class="slide level1">
+
+<h4 data-heading="But it&#39;s not great..." dir="auto"
+id="but-its-not-great...">But it's not great...</h4>
+<p><img data-src="uarr_wavelet_diff.gif"
+class="internal-embed" data-touched="true"
+alt="uarr_wavelet_diff.gif" /></p>
+</section>
+<section class="slide level1">
+
+<h3 data-heading="Denoising Autoencoder" dir="auto"
+id="denoising-autoencoder">Denoising Autoencoder</h3>
+<p><img
+data-src="uarr-autoencoder-no-res.drawio.png"
+class="internal-embed" data-touched="true"
+alt="uarr-autoencoder-no-res.drawio.png" /></p>
+</section>
+<section class="slide level1">
+
+<h4 data-heading="But is it good?" dir="auto" id="but-is-it-good">But is
+it good?</h4>
+<ul>
+<li>State-of-the-art according to the Peak Signal-to-Noise Ratio
+criterion</li>
+<li>But... It was trained on <em>real</em> microarray images which can
+<strong>never</strong> be guaranteed to be noise-free</li>
+</ul>
+</section>
+<section id="idea-why-dont-we-generate-our-own-data"
+class="slide level1"
+data-heading="Idea: why don&#39;t we generate our own data?" dir="auto">
+<h2 data-heading="Idea: why don&#39;t we generate our own data?"
+dir="auto">Idea: why don't we generate our own data?</h2>
+<p><img data-src="microarray_generation.gif"
+class="internal-embed" data-touched="true"
+alt="microarray_generation.gif" /></p>
+</section>
+
+<section class="slide level1">
+
+<p><img
+data-src="uarr-data-slide.png"
+class="internal-embed" data-touched="true"
+alt="hypothetical-virus.drawio.png" /></p>
+</section>
+
+<section class="slide level1">
+
+<p>Can we use the same Autoencoder architecture and improve the
+denoising power by simply training it on a large corpus of synthetic
+data?</p>
+</section>
+<section class="slide level1">
+
+<h4 data-heading="PSNR on synthetic dataset (higher is better)"
+dir="auto" id="psnr-on-synthetic-dataset-higher-is-better">PSNR on
+synthetic dataset (higher is better)</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>PSNR (Synth test)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AE Baseline</td>
+<td>17.7472</td>
+</tr>
+<tr class="even">
+<td>AE Synth</td>
+<td><strong>28.1942</strong></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h4 data-heading="f-PSNR on DeRisi dataset (lower is better)"
+dir="auto" id="f-psnr-on-synthetic-dataset-lower-is-better">f-PSNR on
+DeRisi dataset (lower is better)</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>f-PSNR (DeRisi crop test)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AE Baseline</td>
+<td>23.4593</td>
+</tr>
+<tr class="even">
+<td>AE Synth</td>
+<td><strong>22.0562</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="but-what-are-psnr-and-f-psnr" class="slide level1"
+data-heading="But what are PSNR and f-PSNR?" dir="auto">
+<h2 data-heading="But what are PSNR and f-PSNR?" dir="auto">But what are
+PSNR and f-PSNR?</h2>
+<div class="math math-block is-loaded" dir="auto">
+  $$
+  \begin{aligned}
+  PSNR[\mathrm{db}] = 10 \cdot \log_{10} \left(\frac{(\text{Max possible pixel value})^2}{MSE}\right)
+  \end{aligned}
+  $$
+</div>
+<p><span class="math math-inline is-loaded">MSE</span> stands for <em>Mean
+Square Error</em>.</p>
+</section>
+<section class="slide level1">
+
+<p><span class="math math-inline is-loaded">MSE</span>:</p>
+<ul>
+<li>In PSNR: <span class="math math-inline is-loaded">\(MSE = \frac{1}{mn} \sum\limits_{i=0}^{m-1}\sum\limits_{j=0}^{n-1} (G(i,j) - O(i,j))^2\) </span></li>
+<li>In f-PSNR: <span class="math math-inline is-loaded"></span>\(MSE = \frac{1}{mn} \sum\limits_{i=0}^{m-1}\sum\limits_{j=0}^{n-1} (I_\eta(i,j) - O(i,j))^2\)</li>
+</ul>
+<p>Where:</p>
+<ul>
+<li><span class="math math-inline is-loaded">\(O\)</span> -&gt; the
+cleaned/output image</li>
+<li><span class="math math-inline is-loaded">\(I_{\eta}\)</span> -&gt; the
+noise-added image (input image)</li>
+<li><span class="math math-inline is-loaded">\(G\)</span> -&gt; the
+ground-truth image</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h3 data-heading="Job done?" dir="auto" id="job-done">Job done?</h3>
+</section>
+<section id="we-kept-asking-questions..." class="slide level1"
+data-heading="We kept asking questions..." dir="auto">
+<h2 data-heading="We kept asking questions..." dir="auto">We kept asking
+questions...</h2>
+<p>Is an autoencoder the optimal architecture for denoising microarray
+images?</p>
+<p>Is PSNR or f-PSNR a metric that should be used for microarrays, given
+the semantic meaning of each position in the grid?</p>
+<p>Is it possible that the denoising model removes relevant
+information?</p>
+</section>
+<section id="better-denoising-architectures" class="slide level1"
+data-heading="Better denoising architectures?" dir="auto">
+<h2 data-heading="Better denoising architectures?" dir="auto">Better
+denoising architectures?</h2>
+</section>
+<section class="slide level1">
+
+<h3 data-heading="Restormer" dir="auto" id="restormer">Restormer [2]</h3>
+<p><img data-src="restormer-diagram.drawio.png"
+class="internal-embed" data-touched="true" width="500"
+alt="restormer-diagram.drawio.png" /></p>
+</section>
+<section id="results-were-so-good-we-couldnt-believe-our-eyes"
+class="slide level1"
+data-heading="Results were so good we couldn&#39;t believe our eyes"
+dir="auto">
+<h2 data-heading="Results were so good we couldn&#39;t believe our eyes"
+dir="auto">Results were so good we couldn't believe our eyes</h2>
+<p>
+<img data-src="input_ex0_test.png"
+class="internal-embed" data-touched="true" width="300"
+alt="input_ex0_test.png" />
+<img data-src="output_restormer.png"
+class="internal-embed" data-touched="true" width="300"
+alt="output_restormer.png" />
+<img data-src="gt_ex0_test.png"
+class="internal-embed" data-touched="true" width="300"
+alt="gt_ex0_test.png" />
+</p>
+<blockquote>
+<p>Left-to-right: (1) input, (2) Restormer output, (3) ground-truth</p>
+</blockquote>
+</section>
+<section id="quantitative-results-were-also-stellar"
+class="slide level1"
+data-heading="Quantitative results were also stellar" dir="auto">
+<h2 data-heading="Quantitative results were also stellar"
+dir="auto">Quantitative results were also stellar</h2>
+<h4 data-heading="PSNR on synthetic dataset (higher is better)"
+dir="auto" id="psnr-on-synthetic-dataset-higher-is-better-1">PSNR on
+synthetic dataset (higher is better)</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>PSNR (Synth test)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AE Baseline</td>
+<td>17.7472</td>
+</tr>
+<tr class="even">
+<td>AE Synth</td>
+<td>28.1942</td>
+</tr>
+<tr class="odd">
+<td>Restormer</td>
+<td><strong>29.4749</strong></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h4 data-heading="f-PSNR on DeRisi dataset (lower is better)"
+dir="auto" id="f-psnr-on-synthetic-dataset-lower-is-better-1">f-PSNR on
+DeRisi dataset (lower is better)</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>f-PSNR (DeRisi crop test)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AE Baseline</td>
+<td>23.4593</td>
+</tr>
+<tr class="even">
+<td>AE Synth</td>
+<td><strong>22.0562</strong></td>
+</tr>
+<tr class="odd">
+<td>Restormer</td>
+<td>22.5572</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="then-we-took-a-closer-look..." class="slide level1"
+data-heading="Then we took a closer look..." dir="auto">
+<h2 data-heading="Then we took a closer look..." dir="auto">Then we took
+a closer look...</h2>
+<p><img data-src="uarr-closeup.png"
+class="internal-embed" data-touched="true" alt="uarr-closeup.png" width="650"/></p>
+<blockquote>
+<p>(a) Restormer, (b) our best-performing model, (c) ground-truth</p>
+</blockquote>
+</section>
+<section id="we-need-a-better-metric" class="slide level1"
+data-heading="We need a better metric!" dir="auto">
+<h2 data-heading="We need a better metric!" dir="auto">We need a domain-specific
+metric!</h2>
+</section>
+<section class="slide level1">
+
+<h3 data-heading="Introducing SADGE" dir="auto"
+id="introducing-sadge">Introducing SADGE</h3>
+<p><em>Standard Assessment of Denoising in Gene-chip Evaluation</em>
+(SADGE)</p>
+<div class="math math-block is-loaded" dir="auto">
+  $$
+  \begin{aligned}
+  SADGE = \log \frac{1}{mn}\sum\limits_{i}^{n} \sum\limits_j^{m}  \lvert \operatorname{imeasure}(R_{ij}, G_{ij}) - \operatorname{imeasure}(R_{ij}, O_{ij}) \rvert
+  \end{aligned}
+  $$
+</div>
+<p>Where:</p>
+<ul>
+<li><span class="math math-inline is-loaded">\(n\)</span> and <span
+class="math math-inline is-loaded">\(m\)</span> are the rows and columns for
+a gridded microarray image respectively</li>
+<li><span class="math math-inline is-loaded">\(\operatorname{imeasure}\)</span> is the pixel
+intensity measurement operator</li>
+<li><span class="math math-inline is-loaded">\(R\)</span> is the reference
+image (all dots at 50% pixel intensity)</li>
+<li><span class="math math-inline is-loaded">\(G\)</span> is the ground-truth
+image</li>
+<li><span class="math math-inline is-loaded">\(O\)</span> is the denoised
+(output) image</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h3 data-heading="Results so far" dir="auto" id="results-so-far">Results
+so far</h3>
+<h4 data-heading="SADGE (lower is better)" dir="auto"
+id="sadge-lower-is-better">SADGE (lower is better)</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>SADGE (MP, Synth test)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AE Baseline</td>
+<td>-0.6397</td>
+</tr>
+<tr class="even">
+<td>AE Synth</td>
+<td><strong>-1.1172</strong></td>
+</tr>
+<tr class="odd">
+<td>Restormer</td>
+<td>-1.0804</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ok-but-how-does-sadge-work" class="slide level1"
+data-heading="OK, but how does SADGE work?" dir="auto">
+<h2 data-heading="OK, but how does SADGE work?" dir="auto">OK, but how
+does SADGE work?</h2>
+<p><img data-src="maxpool.gif"
+class="internal-embed" data-touched="true" alt="maxpool.gif" /></p>
+</section>
+<section id="we-asked-yet-another-question..." class="slide level1"
+data-heading="We asked yet another question..." dir="auto">
+<h2 data-heading="We asked yet another question..." dir="auto">We asked
+yet another question...</h2>
+<p>Now that we can measure intensities of dots on the synthetic
+microarrays, can we use them to further <em>condition</em> the
+training?</p>
+</section>
+<section class="slide level1">
+
+<h3 data-heading="Introducing EATME" dir="auto"
+id="introducing-eatme">Introducing EATME</h3>
+<p><em>Elementwise Attention-like Transform for Microarray
+Enhancement</em> (EATME)</p>
+<p><img
+data-src="uarr-autoencoder-attn.drawio.png"
+class="internal-embed" data-touched="true"
+alt="uarr-autoencoder-attn.drawio.png" width="800"/></p>
+</section>
+<section class="slide level1">
+<h3 data-heading="Introducing DEL" dir="auto"
+id="introducing-del">Dot Expression Loss</h3>
+
+<p>We also add the following loss term to the total loss:</p>
+
+<div class="math math-block is-loaded" dir="auto">
+  $$
+  \begin{aligned}
+  \mathcal L_{DEL} = MSE(\mathbf e_{G}, \mathbf e_{O})
+  \end{aligned}
+  $$
+</div>
+
+<p>Where:</p>
+
+<!-- directives:[] -->
+<ul>
+<li><span class="math math-inline is-loaded">$\mathbf e_G$</span> indicates the expression value vector collected from the ground-truth image</li>
+<li><span class="math math-inline is-loaded">$\mathbf e_O$</span> indicates the expression value vector collected from the denoised image.</li>
+</ul>
+
+</section>
+<section id="results-last-time-i-swear" class="slide level1"
+data-heading="Results (last time, I swear)" dir="auto">
+<h2 data-heading="Results (last time, I swear)" dir="auto">Results (last
+time, I swear)</h2>
+</section>
+
+<section class="slide level1">
+<h3 id="test-stage-psnr-on-the-synthetic-dataset">Test-stage PSNR on the synthetic dataset (higher is better)</h3>
+  <table>
+  <thead>
+  <tr>
+  <th id="method">Method</th>
+  <th id="psnr_(synth_test)">PSNR (Synth test)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>AE Baseline</td>
+  <td>17.7472</td>
+  </tr>
+  <tr>
+  <td>AE Synth</td>
+  <td>28.1942</td>
+  </tr>
+  <tr>
+  <td>Restormer</td>
+  <td><strong>29.4749</strong></td>
+  </tr>
+  <tr>
+  <td>AE Synth (with residuals)</td>
+  <td>28.1569</td>
+  </tr>
+  <tr>
+  <td>AE Synth (normal)</td>
+  <td>17.4355</td>
+  </tr>
+  <tr>
+  <td>AE Synth (EATME, DEL)</td>
+  <td>28.3126</td>
+  </tr>
+  </tbody>
+  </table>
+</section>
+
+<section class="slide level1">
+<h3 id="test-stage-sadge">Test-stage SADGE (lower is better)</h3>
+  <table>
+  <thead>
+  <tr>
+  <th id="method">Method</th>
+  <th id="sadge_(mp,_synth_test)">SADGE (MP, Synth test)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>AE Baseline</td>
+  <td>-0.6397</td>
+  </tr>
+  <tr>
+  <td>AE Synth</td>
+  <td>-1.1172</td>
+  </tr>
+  <tr>
+  <td>Restormer</td>
+  <td>-1.0804</td>
+  </tr>
+  <tr>
+  <td>AE Synth (with residuals)</td>
+  <td>-1.1012</td>
+  </tr>
+  <tr>
+  <td>AE Synth (normal)</td>
+  <td>-0.4674</td>
+  </tr>
+  <tr>
+  <td>AE Synth (EATME, DEL)</td>
+  <td><strong>-1.1225</strong></td>
+  </tr>
+  </tbody>
+  </table>
+
+</section>
+
+<section class="slide level1">
+<h3 id="test-stage-f-psnr-on-the-derisi-dataset">Test-stage f-PSNR on the DeRisi dataset (lower is better)</h3>
+  <table>
+  <thead>
+  <tr>
+  <th id="method">Method</th>
+  <th id="f-psnr_(derisi_crop_test)">f-PSNR (DeRisi crop test)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>AE Baseline</td>
+  <td>23.4593</td>
+  </tr>
+  <tr>
+  <td>AE Synth</td>
+  <td>22.0562</td>
+  </tr>
+  <tr>
+  <td>Restormer</td>
+  <td>22.5572</td>
+  </tr>
+  <tr>
+  <td>AE Synth (with residuals)</td>
+  <td>22.0000</td>
+  </tr>
+  <tr>
+  <td>AE Synth (normal)</td>
+  <td><strong>20.6842</strong></td>
+  </tr>
+  <tr>
+  <td>AE Synth (EATME, DEL)</td>
+  <td>22.1591</td>
+  </tr>
+  </tbody>
+  </table>
+</section>
+<section id="qa" class="slide level1" data-heading="Q&amp;A" dir="auto">
+<h2 data-heading="Q&amp;A" dir="auto">Summary</h2>
+<ul>
+  <li>We addressed the problem of denoising of microarray images</li>
+  <li>We proposed a synthetic data generation pipeline for microarray image datasets</li>
+  <li>We introduced a new domain-specific metric for assessing the power of denoising models (SADGE)</li>
+  <li>We introduced a new state-of-the-art microarray image denoising model trained on the synthetic dataset leveraging the autoencoder architecture with the EATME module and an additional loss term penalizing the training for inaccurate expression readouts (DEL)</li>
+</ul>
+</section>
+<section>
+<div id="content"><h2 id="references">References</h2>
+<p>[1]: A. Mohandas, S. M. Joseph, and P. S. Sathidevi, ‘An Autoencoder based Technique for DNA Microarray Image Denoising’, in <em>2020 International Conference on Communication and Signal Processing (ICCSP)</em>, Chennai, India: IEEE, Jul. 2020, pp. 1366–1371. doi: <a href="https://doi.org/10.1109/ICCSP48568.2020.9182265">10.1109/ICCSP48568.2020.9182265</a>.</p></div>
+<!-- directives:[] -->
+<div id="content"><p>[2]: S. W. Zamir, A. Arora, S. Khan, M. Hayat, F. S. Khan, and M.-H. Yang, ‘Restormer: Efficient Transformer for High-Resolution Image Restoration’, Mar. 11, 2022, <em>arXiv</em>: arXiv:2111.09881. doi: <a href="https://doi.org/10.48550/arXiv.2111.09881">10.48550/arXiv.2111.09881</a>.</p></div>
+</section>
+
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom,
+          RevealMath.KaTeX
+        ]
+      });
+    </script>
+    </body>
+</html>
