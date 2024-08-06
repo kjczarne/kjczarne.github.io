@@ -19,6 +19,7 @@ ShowReadingTime = true
 ShowCodeCopyButtons = true
 comments = true
 showtoc = true
+DateFormat = "2 Jan 2006"
 
   [params.homeInfoParams]
   Title = "Chris"
@@ -129,6 +130,12 @@ weight = 4
 identifier = "papers"
 name = "papers"
 url = "/papers/"
+weight = 3
+
+[[menu.main]]
+identifier = "projects"
+name = "projects"
+url = "/projects/"
 weight = 3
 
 [markup.goldmark.renderer]
