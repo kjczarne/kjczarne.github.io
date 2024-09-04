@@ -11,7 +11,6 @@ keywords:
   - 'biotechnology'
   - 'biology'
   - 'genomics'
-  - 'software'
 author:
   - Chris J. Czarnecki
 subject: 'Curriculum Vitae'
@@ -30,8 +29,14 @@ python: 100
 <p style="text-align:center">ORCID: <a href="https://orcid.org/0009-0008-3721-6151">0009-0008-3721-6151</a></p>
 
 <h2 style="color:#6b04d9;text-align:center">Experience</h2>
+
+<h3 style="color:#6b04d9;text-align:center">AI Engineer at KisoJi Biotech</h3>
+<p style="font-weight:600;text-align:center">(Aug 2024 - now, Waterloo, ON, Canada)</p>
+
+- Applying and developing generative models in antibody design
+
 <h3 style="color:#6b04d9;text-align:center">Junior SW Developer at Technica Engineering GmbH</h3>
-<p style="font-weight:600;text-align:center">(Dec 2019 - Aug 2022, Germany)</p>
+<p style="font-weight:600;text-align:center">(Dec 2019 - Aug 2022, Munich, Germany)</p>
 
 - Hardware testing infrastructure development
     - [**Kalash** (GPLv3)](https://github.com/Technica-Engineering/kalash) (Sep 2021 - Aug 2022, project overlord)
@@ -43,15 +48,10 @@ python: 100
 - Managing CI, workflow automation and code quality assurance systems (GitLab CI, Jenkins, Docker, SonarQube)
 
 <h3 style="color:#6b04d9;text-align:center">BSc Research Student at Systems Biology Department, University of Warsaw / IBB Polish Academy of Sciences</h3>
-<p style="font-weight:600;text-align:center">(Oct 2017 - Jul 2018)</p>
+<p style="font-weight:600;text-align:center">(Oct 2017 - Jul 2018, Warsaw, Poland)</p>
 
 - Designing Gateway constructs for plant transformation
 - DNA isolation, PCR, electrophoresis
-
-<h2 style="color:#6b04d9;text-align:center">Awards &amp Recognition</h2>
-
-- [International Master's Award of Excellence](https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/awards/international-masters-award-excellence-imae)
-- [Devon Stoneman Memorial Award](https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/awards/devon-stoneman-memorial-award)
 
 <div class="pagebreak"></div>
 <h2 style="color:#6b04d9;text-align:center">Selected Research Projects</h2>
@@ -77,38 +77,20 @@ python: 100
 - **Data Science Retreat Bootcamp, Berlin** (Apr 2019 - Jul 2019)
 - **BSc Biotechnology, University of Warsaw** (Oct 2015 - Jul 2018, 4/5 final grade)
 
+<h2 style="color:#6b04d9;text-align:center">Awards &amp; Recognition</h2>
+
+- [International Master's Award of Excellence](https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/awards/international-masters-award-excellence-imae)
+- [Devon Stoneman Memorial Award](https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/awards/devon-stoneman-memorial-award)
+
 <div class="pagebreak"></div>
 <h2 style="color:#6b04d9;text-align:center">Skills</h2>
 
-|                                 |                                                        | Confidence                                                      |
-| ------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------- |
-| **Programming**                 | <label for="python">Python</label>                     | <progress id="python" value="100" max="100"></progress>         |
-|                                 | <label for="csharp">C#, F#</label>                     | <progress id="csharp" value="80" max="100"></progress>          |
-|                                 | <label for="rust">Rust, TypeScript:</label>            | <progress id="rust" value="60" max="100"></progress>            |
-|                                 | <label for="cpp">C++</label>                           | <progress id="cpp" value="50" max="100"></progress>             |
-|                                 | <label for="api">API Development</label>               | <progress id="api" value="90" max="100"></progress>             |
-|                                 | <label for="automation">Automation</label>             | <progress id="automation" value="90" max="100"></progress>      |
-| **AI/ML**                       | <label for="pytorch">PyTorch</label>                   | <progress id="pytorch" value="90" max="100"></progress>         |
-|                                 | <label for="sklearn">Scikit-Learn</label>              | <progress id="sklearn" value="85" max="100"></progress>         |
-|                                 | <label for="tensorflow">TensorFlow</label>             | <progress id="tensorflow" value="60" max="100"></progress>      |
-|                                 | <label for="jax">JAX</label>                           | <progress id="jax" value="50" max="100"></progress>             |
-|                                 | <label for="nlp">NLP</label>                           | <progress id="nlp" value="75" max="100"></progress>             |
-|                                 | <label for="computer-vision">Computer Vision</label>   | <progress id="computer-vision" value="80" max="100"></progress> |
-| **DevOps and Data Engineering** | <label for="docker">Docker, Docker-Compose</label>     | <progress id="docker" value="90" max="100"></progress>          |
-|                                 | <label for="ci">Jenkins, GitLab CI</label>             | <progress id="ci" value="90" max="100"></progress>              |
-|                                 | <label for="airflow">Apache Airflow</label>            | <progress id="airflow" value="60" max="100"></progress>         |
-|                                 | <label for="slurm">SLURM</label>                       | <progress id="slurm" value="60" max="100"></progress>           |
-|                                 | <label for="data">Data collection and curation</label> | <progress id="data" value="95" max="100"></progress>            |
-|                                 | Databases (SQL, NoSQL)                                 | <progress id="data" value="70" max="100"></progress>            |
-| **Project Management**          | <label for="gh-projects">GitHub Projects, JIRA</label> | <progress id="gh-projects" value="85" max="100"></progress>     |
-|                                 | <label for="leadership">Leadership skills</label>      | <progress id="leadership" value="85" max="100"></progress>      |
-| **Graphics and CV Tools**       | <label for="blender">Torchvision</label>               | <progress id="blender" value="85" max="100"></progress>         |
-|                                 | <label for="gimp">GIMP</label>                         | <progress id="gimp" value="75" max="100"></progress>            |
-|                                 | <label for="blender">PIL/OpenCV</label>                | <progress id="blender" value="65" max="100"></progress>         |
-|                                 | <label for="blender">Blender</label>                   | <progress id="blender" value="65" max="100"></progress>         |
-| **Biotech skills**              | <label for="elfo">Electrophoresis</label>              | <progress id="elfo" value="90" max="100"></progress>            |
-|                                 | <label for="pcr">PCR</label>                           | <progress id="pcr" value="80" max="100"></progress>             |
-|                                 | <label for="cdna">Total cDNA preparation</label>       | <progress id="cdna" value="80" max="100"></progress>            |
+- **Programming**: Python, C#, F#, Rust, C++, API development, automation
+- **AI/ML**: PyTorch, Scikit-Learn, TensorFlow, Natural Language Processing, Computer Vision, Torchvision, PIL, OpenCV, data collection, data curation, diffusion models, transformer models, convolutional neural networks
+- **DevOps/MLOps**: Docker, Docker-compose, Jenkins, GitLab CI, Apache Airflow, SQL, NoSQL, GitHub
+- **Protein modeling and drug design**: ChimeraX, MOE (Molecular Operating Environment), generative models for protein design
+- **Wet Lab**: PCR, Electrophoresis, cDNA preparation, microbiological cultures
+- Project management, Leadership
 
 <h2 style="color:#6b04d9;text-align:center">Additional info</h2>
 <h3 style="color:#6b04d9;text-align:center">Languages</h3>
@@ -119,7 +101,6 @@ python: 100
 | 🇩🇪 German  | advanced (C1) |
 | 🇵🇱 Polish  | native        |
 
-<div class="pagebreak"></div>
 <h2 style="color:#6b04d9;text-align:center">Publications</h2>
 
 <p style="font-size: x-small">
