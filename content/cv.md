@@ -56,7 +56,7 @@ python: 100
 <div class="pagebreak"></div>
 <h2 style="color:#6b04d9;text-align:center">Selected Research Projects</h2>
 
-- **UArr** (Oct 2023 - now)
+- **UArr** (Oct 2023 - now) \[5\]
     - Research project focusing on applying modern image denosing methods (Autoencoders, Transformers) to DNA Microarray images
     - Improved on 2020 SOTA from $20.05$ PSNR to $19.88$ PSNR
     - Developed a biologically-relevant metric for denoising success
@@ -74,6 +74,7 @@ python: 100
 <h2 style="color:#6b04d9;text-align:center">Education</h2>
 
 - **MASc Systems Design Engineering, University of Waterloo** (Sep 2022 - Sep 2024, 89.75\% GPA)
+    - **CBB NSERC CREATE Training in Global Biomedical Technology Research and Innovation** (Dec 2022 - Aug 2024)
 - **Data Science Retreat Bootcamp, Berlin** (Apr 2019 - Jul 2019)
 - **BSc Biotechnology, University of Warsaw** (Oct 2015 - Jul 2018, 4/5 final grade)
 
@@ -88,7 +89,8 @@ python: 100
 - **Programming**: Python, C#, F#, Rust, C++, API development, automation
 - **AI/ML**: PyTorch, Scikit-Learn, TensorFlow, Natural Language Processing, Computer Vision, Torchvision, PIL, OpenCV, data collection, data curation, diffusion models, transformer models, convolutional neural networks
 - **DevOps/MLOps**: Docker, Docker-compose, Jenkins, GitLab CI, Apache Airflow, SQL, NoSQL, GitHub
-- **Protein modeling and drug design**: ChimeraX, MOE (Molecular Operating Environment), generative models for protein design
+- **Cloud**: AWS EC2, AWS Sagemaker
+- **Protein modeling and drug design**: ChimeraX, generative models for protein design
 - **Wet Lab**: PCR, Electrophoresis, cDNA preparation, microbiological cultures
 - Project management, Leadership
 
@@ -100,18 +102,25 @@ python: 100
 | 🇬🇧 English | fluent (C2)   |
 | 🇩🇪 German  | advanced (C1) |
 | 🇵🇱 Polish  | native        |
+| 🇳🇱 Dutch   | basic (A1)    |
 
 <h2 style="color:#6b04d9;text-align:center">Publications</h2>
 
 <p style="font-size: x-small">
-[1] C. A. Tai, E. Janes, C. Czarnecki, and A. Wong, ‘Double-Condensing Attention Condenser: Leveraging Attention in Deep Learning to Detect Skin Cancer from Skin Lesion Images’. arXiv, Nov. 20, 2023. doi: [10.48550/arXiv.2311.11656](https://doi.org/10.48550/arXiv.2311.11656).
+[1] C. A. Tai, E. Janes, C. Czarnecki, and A. Wong, ‘Double-Condensing Attention Condenser: Leveraging Attention in Deep Learning to Detect Skin Cancer from Skin Lesion Images’. arXiv, Nov. 20, 2023. doi: <a href="https://doi.org/10.48550/arXiv.2311.11656">10.48550/arXiv.2311.11656</a>.
 <br/>
 <br/>
-[2] A. Pathiranage, C. Czarnecki, Y. Chen, P. Xi, L. Xu, and A. Wong, ‘In The Wild Ellipse Parameter Estimation for Circular Dining Plates and Bowls’. arXiv, May 11, 2024. Accessed: May 14, 2024. [Online]. Available: [http://arxiv.org/abs/2405.07121](http://arxiv.org/abs/2405.07121)
+[2] A. Pathiranage, C. Czarnecki, Y. Chen, P. Xi, L. Xu, and A. Wong, ‘In The Wild Ellipse Parameter Estimation for Circular Dining Plates and Bowls’. arXiv, May 11, 2024. Accessed: May 14, 2024. [Online]. Available: <a href="http://arxiv.org/abs/2405.07121">http://arxiv.org/abs/2405.07121</a>
 <br/>
 <br/>
-[3] A. Sharma, C. Czarnecki, Y. Chen, P. Xi, L. Xu, and A. Wong, ‘How Much You Ate? Food Portion Estimation on Spoons’. arXiv, May 11, 2024. doi: [10.48550/arXiv.2405.08717](https://doi.org/10.48550/arXiv.2405.08717).
+[3] A. Sharma, C. Czarnecki, Y. Chen, P. Xi, L. Xu, and A. Wong, ‘How Much You Ate? Food Portion Estimation on Spoons’. arXiv, May 11, 2024. doi: <a href="https://doi.org/10.48550/arXiv.2405.08717">10.48550/arXiv.2405.08717</a>.
 <br/>
 <br/>
-[4] D. Lu _et al._, ‘Integrating deep transformer and temporal convolutional networks for SMEs revenue and employment growth prediction’, _Expert Systems with Applications_, vol. 252, p. 124129, Oct. 2024, doi: [10.1016/j.eswa.2024.124129](https://doi.org/10.1016/j.eswa.2024.124129).
+[4] D. Lu _et al._, ‘Integrating deep transformer and temporal convolutional networks for SMEs revenue and employment growth prediction’, _Expert Systems with Applications_, vol. 252, p. 124129, Oct. 2024, doi: <a href="https://doi.org/10.1016/j.eswa.2024.124129">10.1016/j.eswa.2024.124129</a>.
+<br/>
+<br/>
+[5] C. Czarnecki, “Microarray Image Denoising Leveraging Autoencoders and Attention-Based Architectures with Synthetic Training Data,” Sep. 2024, Accessed: Sep. 17, 2024. [Online]. Available: https://hdl.handle.net/10012/21007
+<br/>
+<br/>
+[6] A. Nazemi, M. H. Sepanj, N. Pellegrino, C. Czarnecki, and P. Fieguth, “Particle-Filtering-based Latent Diffusion for Inverse Problems,” Aug. 25, 2024, _arXiv_: arXiv:2408.13868. doi: [10.48550/arXiv.2408.13868](https://doi.org/10.48550/arXiv.2408.13868).
 </p>
